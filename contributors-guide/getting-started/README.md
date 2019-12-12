@@ -8,7 +8,7 @@
 ```
 $ npm i -g @vue/cli
 
-ou (pour Mac s'il y a des erreurs) :
+(or for Mac if some errors occur) :
 $ sudo npm i -g @vue/cli --unsafe-perm
 
 $ npm i -g pm2
@@ -25,11 +25,18 @@ Test if all is OK
 {% code title="$ sudo service mongod start" %}
 ```bash
 mongo>
+
+
+or for Mac
+$ brew services start mongodb-community@4.2
+$ mongo
+>
+
 ```
 {% endcode %}
 
 ```bash
-$ vue-ui
+$ vue ui
 //triggers a browser tool
 ```
 
