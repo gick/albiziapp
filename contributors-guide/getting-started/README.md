@@ -8,7 +8,7 @@
 ```
 $ npm i -g @vue/cli
 
-ou (pour Mac chez Seb) :
+ou (pour Mac s'il y a des erreurs) :
 $ sudo npm i -g @vue/cli --unsafe-perm
 
 $ npm i -g pm2
