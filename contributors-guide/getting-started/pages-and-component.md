@@ -6,7 +6,7 @@ Since Albiziapp aims to mimic mobile look and feels, it is structured using the 
 
 Think of a page as **a specific screen of a mobile app**. Pages are practical for **performing fast, focused interactions**. They usually have only one purpose, and they take all the screen. 
 
-![A page for entering record](../../.gitbook/assets/image%20%289%29.png)
+![A page for entering record](../../.gitbook/assets/image%20%2812%29.png)
 
 {% hint style="info" %}
 It's a best practice to keep pages focused on only one task
@@ -33,7 +33,7 @@ A minimal example of a v-ons-page is :
 
 In order to keep the project easy to maintain, all pages component are located in the same folder, which is unsurprisingly named pages.
 
-![The pages folder](../../.gitbook/assets/image%20%285%29.png)
+![The pages folder](../../.gitbook/assets/image%20%287%29.png)
 
 
 

@@ -8,7 +8,7 @@ Albiziapp follows the pattern of OnsenUI Framework \([https://onsen.io/v2/api/vu
 Pages are either root \(in navbar\), or stacked \(on top of a root page, or a stacked page\)
 {% endhint %}
 
-![A root page \(Map\)](../../.gitbook/assets/image%20%283%29.png)
+![A root page \(Map\)](../../.gitbook/assets/image%20%284%29.png)
 
 ![A stacked page \(from root page\)](../../.gitbook/assets/image.png)
 
