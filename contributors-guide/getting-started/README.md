@@ -6,7 +6,7 @@
 * Install [vue/@cli](https://cli.vuejs.org/) and [pm2](https://pm2.keymetrics.io/)
 
 ```
-$ npm i -g vue/@cli
+$ npm i -g @vue/cli
 $ npm i -g pm2
 ```
 
