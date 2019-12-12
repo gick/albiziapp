@@ -3,7 +3,7 @@
 ## Setup your dev environment
 
 * Install node \([https://nodejs.org/en/download/](https://nodejs.org/en/download/)\)
-* Install [vue/@cli](https://cli.vuejs.org/) and [pm2](https://pm2.keymetrics.io/)
+* Install [@vue/cli](https://cli.vuejs.org/) and [pm2](https://pm2.keymetrics.io/)
 
 ```
 $ npm i -g @vue/cli
