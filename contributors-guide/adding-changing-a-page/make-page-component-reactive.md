@@ -65,9 +65,11 @@ Import the following file in the ./js directory and change its extension to .js
 
 {% file src="../../.gitbook/assets/text.json" caption="Data source" %}
 
+In your new page, import the module using argument destructruring.
 
-
-
+```javascript
+import { text } from '../js/test'
+```
 
 
 
