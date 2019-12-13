@@ -2,7 +2,7 @@
 
 
 
-### Introducing reactivity : dynamic number of observations
+## About reactivity 
 
 After having created static content, we will now use this content to use reactivity. Reactivity is at the core of VueJS. 
 
@@ -18,7 +18,7 @@ In the case of Albiziapp, reactivity means :
   * If `a=b+c`  each time `b or c` are changed, a will change accordingly.
 * Data changes occurring in a subcomponent are reflected in the parent components
 
-#### Practical example : mutating data
+## Practical example : mutating data
 
 In the new page script, let's declare a `data()` function. This function is used in VueJS to create simple reactive data. For convenience, use the following code.
 
@@ -58,4 +58,10 @@ The double mustache syntax evaluates the value of the **javascript expression** 
     {{text.split('').sort().join().split('')}}
 
 ```
+
+## Handling events to mutate data
+
+
+
+
 
