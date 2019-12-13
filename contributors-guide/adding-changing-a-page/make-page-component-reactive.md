@@ -61,6 +61,10 @@ The double mustache syntax evaluates the value of the **javascript expression** 
 
 ## Handling events to mutate data
 
+{% file src="../../.gitbook/assets/text.json" caption="Data source" %}
+
+
+
 
 
 
