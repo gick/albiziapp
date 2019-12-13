@@ -68,8 +68,6 @@ Import the following file in the ./js directory and change its extension to .js
 In your new page, import the module using argument destructruring.
 
 ```javascript
-import { text } from '../js/test'
+import { text } from "../store/text";
 ```
-
-
 
