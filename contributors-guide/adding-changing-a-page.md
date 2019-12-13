@@ -10,15 +10,17 @@ A new observation from another user should be reflected immediately in the count
 
 ## Steps to follow
 
-### The easy steps
+### Start using the tools
 
-* Start Albiziapp locally 
+* Start Albiziapp locally \(you might have to kill already running albiziapp processes\)
 
 {% hint style="info" %}
-Use`vue ui`from the albiziapp/ directory then Task-&gt;Server-&gt;Run task 
+Use`vue ui`from the albiziapp/ directory then Task`->`Serve`->`Run task 
 {% endhint %}
 
-![Expected output](../.gitbook/assets/image%20%281%29.png)
+This action triggers the source dependencies injection, their bundling and then start serving Albiziapp at [http://localhost:8080/](http://localhost:8080/)
+
+![Expected output at http://localhost:8000/](../.gitbook/assets/image%20%281%29.png)
 
 {% hint style="info" %}
 From vue-dashboard on top left menu : "open in editor" . It should open VSCode.
@@ -52,17 +54,17 @@ export default {
 </style>
 ```
 
-Using autocomplete, populate the template. Add the v-ons-page element as direct child of template. Then add something to display for test purposes.
+Using autocomplete, populate the template. Add the v-ons-page element as direct child of template. Then add something to display for test purposes \(here a div\).
 
 ```javascript
 <template>
   <v-ons-page>
-      <div>Hello page</div>
+      <div class="content">Hello page</div>
   </v-ons-page>
 </template>
 ```
 
-### Less easy steps
+### Add your page to the tabbar
 
 So far, you added a .vue file but the web app do not "knows" about it. The newly created .vue file must be [imported](https://vuejs.org/v2/guide/single-file-components.html#Introduction). 
 
@@ -93,7 +95,81 @@ Actually type the import line and save.
 This is very convenient : it permits to know exactly when a change breaks the app.
 {% endhint %}
 
-Your new page isn't yet in the tabbar. To make it happen, you need to change the value of the `tabs()` function. This function is 
+Your new page isn't yet in the tabbar. To make it happen, you need to change the value of the `tabs()` function. 
+
+This function returns an array of objects, **each element of the array represent an item in the tabbar**.
+
+```javascript
+  tabs() {
+      var tab = 
+      [
+        {
+          label: this.$t('map'),
+          icon: "ion-map",
+          active: false,
+          page: Map,
+          theme: red
+        },
+        {
+          label: this.$t('mission'),
+          icon: "ion-home",
+          page: Home,
+          theme: red
+        },       
+     // ....
+        {
+          label: "Folia",
+          icon: "ion-search",
+          page: Folia,
+          theme: purple
+        }
+      ];
+      // .....
+      return tab
+    },
+```
+
+Taking inspiration from the last item of the array \(Folia\), add a new object defining your page to the array. This object will have three properties :
+
+* `icon type String`
+* `label type String` 
+* `page type Object`
+
+{% hint style="info" %}
+To find a correct icon property value, find the desired icon in [ioniconics](https://ionicons.com/). Then append "ion-" to the icon name. \([ref](https://onsen.io/v2/api/vue/v-ons-icon.html)\)
+{% endhint %}
+
+You should now have a new tab entry leading to your newly created page. 
+
+### Optional challenge : make it prettier
+
+The current version of the new page isn't very visually appealing. This challenge is to make the page looking like a web startup front page. 
+
+Somethings that says _"We are so amazing you wouldn't even understand" ._ Look at [startup generator](http://tiffzhang.com/startup) if you need inspiration.
+
+To that end, you can use two features of OnsenUI, **page background** and **cards**. 
+
+#### Page background
+
+The v-ons-page component comes with a easy to use background effect. To use it, simply add a new children div where `class="background"` This will be interpreted as a static background. 
+
+```javascript
+<template>
+  <v-ons-page>
+      <div class="background">
+          <img src="https://wi-images.condecdn.net/image/zgdPJmnE1aW/crop/1620/f/situational_wired_improbable_26-04-17_239_v1rgb-copy.jpg"/>
+      </div>
+      
+      <div>
+          Hello page
+      </div>
+  </v-ons-page>
+</template>
+```
+
+#### Cards components
+
+OnsenUI card component \([v-ons-card](https://onsen.io/v2/api/vue/v-ons-card.html)\) permit to group related information.  Cards have a **title** and a **content.** 
 
 
 

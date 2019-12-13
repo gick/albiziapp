@@ -63,6 +63,7 @@ If all goes well you should be directed to a page like this :
 $ git clone https://github.com/REVERIES-project/reveries-osm-data.git
 $ cd reveries-osm-data
 $ npm install
+$ pm2 start ecosystem.config.js
 ```
 
 ## Get Vue DevTools
