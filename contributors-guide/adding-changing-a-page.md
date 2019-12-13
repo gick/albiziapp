@@ -160,7 +160,7 @@ The v-ons-page component comes with a easy to use background effect. To use it, 
           <img src="https://wi-images.condecdn.net/image/zgdPJmnE1aW/crop/1620/f/situational_wired_improbable_26-04-17_239_v1rgb-copy.jpg"/>
       </div>
       
-      <div>
+      <div class="content">
           Hello page
       </div>
   </v-ons-page>
@@ -169,11 +169,68 @@ The v-ons-page component comes with a easy to use background effect. To use it, 
 
 #### Cards components
 
-OnsenUI card component \([v-ons-card](https://onsen.io/v2/api/vue/v-ons-card.html)\) permit to group related information.  Cards have a **title** and a **content.** 
+OnsenUI card component \([v-ons-card](https://onsen.io/v2/api/vue/v-ons-card.html)\) permit to group related information.  Cards have a **title** and a **content.** Title and content are div where `class="title"` and `class="content"` respectively.
+
+```javascript
+      <v-ons-card>
+        <div class="title">Awsome</div>
+        
+        <div class="content">
+          Lorem ipsum dolor, sit amet consects.
+        </div>
+      
+      </v-ons-card>
+
+```
 
 
 
-### Step 1 to 3
+### Introducing reactivity : dynamic number of observations
 
+After having created static content, we will now use this content to use reactivity. Reactivity is at the core of VueJS. 
 
+{% hint style="info" %}
+Beyond Albiziapp and VueJS, reactive programming is a research topic in itself \(that has relations with MDE although no clear consensus exists\).
+{% endhint %}
+
+In the case of Albiziapp, reactivity means :
+
+* Data are declarative. The UI reacts automatically to data change.
+  * =&gt; The UI should not change if there are no data change
+* Derived data are bounded to the original data. 
+  * If `a=b+c`  each time `b or c` are changed, a will change accordingly.
+* Data changes occurring in a subcomponent are reflected in the parent components
+
+#### Practical example : mutating data
+
+In the new page script, let's declare a `data()` function. This function is used in VueJS to create simple reactive data. For convenience, use the following code.
+
+```javascript
+<template>
+  <v-ons-page>
+    <div class="content center">{{text}}</div>
+  </v-ons-page>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      text: "interest"
+    };
+  }
+};
+</script>
+
+<style>
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+</style>
+
+```
+
+The `text` variable is here declared and initialized. It is now possible to refer to `text` in the UI. 
 
