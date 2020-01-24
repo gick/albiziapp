@@ -1,8 +1,14 @@
 <template>
   <v-ons-page> 
+
     <v-ons-card v-show="!$store.state.user.id">
       <div  class="title">{{ $t('authenticate')}}</div>
       <div class="content">
+            <div v-for="item in wikiResponse">
+            {{item}}
+      </div>
+    </div>
+
         <p>{{ $t('welcome')}}</p>
         <p>{{ $t('authenticatePlease')}}</p>
         <v-ons-button @click="authenticate">{{ $t('authenticateButton')}}</v-ons-button>
@@ -86,14 +92,16 @@ function Activite(intitule, statut) {
 export default {
   data() {
     return {
+      wikiResponse:[],
       showDialog: false,
       totalSecondes : 0,
     };
   },
+  
   mounted() {
     console.log(process.env.NODE_ENV)
     console.log(process.env.VUE_APP_MAP_SERVER)
-
+    this.getWiki()
     EventBus.$on('displayHelpMessage', param => {
       this.displayHelpMessage(param)
     });
@@ -102,6 +110,8 @@ export default {
     });
   },
   computed: {
+    api(){
+   },
     gamificationMode() {
       return this.$store.state.user.gamificationMode;
     },
@@ -197,6 +207,11 @@ export default {
       }
   },
   methods: {
+     async getWiki(){
+       this.wikiResponse= await  fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=macron',{method:'GET'})
+       .then(v=>v.json()
+       .then(json=>json.query.search))
+    },
     displayHelpMessage(param) {
       let {option, releve} = param
       let message = ""

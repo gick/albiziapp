@@ -33,6 +33,7 @@ import Profile from "./pages/Profile.vue";
 import Arboretum from "./pages/Arboretum.vue";
 import Releve from "./pages/Releves.vue";
 import Folia from "./pages/Folia.vue";
+import Test from "./pages/Test.vue";
 
 // Just a linear interpolation formula
 const lerp = (x0, x1, t) => parseInt((1 - t) * x0 + t * x1, 10);
@@ -259,7 +260,15 @@ export default {
           page: Folia,
 
           theme: purple
+        },
+                {
+          label: "Blu",
+          icon: "ion-search",
+          page: Test,
+
+          theme: purple
         }
+
       ];
       if (this.gamificationMode) {
         var profil = 
