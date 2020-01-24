@@ -1,12 +1,16 @@
 # Getting started
 
-### Setup your dev environment
+## Setup your dev environment
 
 * Install node \([https://nodejs.org/en/download/](https://nodejs.org/en/download/)\)
-* Install vue/@cli and pm2
+* Install [@vue/cli](https://cli.vuejs.org/) and [pm2](https://pm2.keymetrics.io/)
 
 ```
-$ npm i -g vue/@cli
+$ npm i -g @vue/cli
+
+(or for Mac if some errors occur) :
+$ sudo npm i -g @vue/cli --unsafe-perm
+
 $ npm i -g pm2
 ```
 
@@ -21,15 +25,22 @@ Test if all is OK
 {% code title="$ sudo service mongod start" %}
 ```bash
 mongo>
+
+
+or for Mac
+$ brew services start mongodb-community@4.2
+$ mongo
+>
+
 ```
 {% endcode %}
 
 ```bash
-$ vue-ui
+$ vue ui
 //triggers a browser tool
 ```
 
-### Get the last version of Albiziapp front end
+## Get the last version of Albiziapp front end
 
 ```bash
 $ git clone https://github.com/gick/albiziapp.git
@@ -40,25 +51,50 @@ $ npm run serve
 
 If all goes well you should be directed to a page like this :
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2815%29.png)
 
 
 
 
 
-### Get the last version of Albiziapp back-end
+## Get the last version of Albiziapp back-end
 
 ```bash
 $ git clone https://github.com/REVERIES-project/reveries-osm-data.git
 $ cd reveries-osm-data
 $ npm install
+$ pm2 start ecosystem.config.js
 ```
 
-### Get Vue DevTools
+## Get Vue DevTools
 
-Vue DevTools is an extension for Chromium/Chrome. **It is very very very useful**. If you don't like Chromium, code your own browser that accepts Vue DevTools
+Vue DevTools is an extension for **Chromium/Chrome** and **Firefox** \(tested in [Firefox 71](https://www.mozilla.org/en-US/firefox/developer/?utm_campaign=deved_inactive_css&utm_medium=referral&utm_source=developer.mozilla.org)\).
 
-[https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+ **It is very very very useful**. I can't state how useful it is, but really, please use it!
 
- 
+* Chrome/Chromium [Vue DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+* Firefox [Vue DevTools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+* Extension [Github page](https://github.com/vuejs/vue-devtools) \(for the might\)
+
+## Get and configure a text editor
+
+Choosing a text editor is often harder than choosing a life partner, so I propose to chose for you.
+
+[Visual Studio Code ](https://code.visualstudio.com/)is an excellent free text editor. Works on any platform, free and open source, and last but not least : a lot of extension to make Vue coding a pleasure. 
+
+Extension for an happy coding :
+
+* [Vetur](https://vuejs.github.io/vetur) \(autocomplete Vue files, documentation on hover, formating...\)
+* [Auto-close-tags](https://marketplace.visualstudio.com/items?itemName=bradgashler.htmltagwrap) \(less keystrokes, more happiness\)
+* [Git lens](https://gitlens.amod.io/)  
+  * "GitLens simply helps you **better understand code**. Quickly glimpse into whom, why, and when a line or code block was changed. Jump back through history to **gain further insights"**
+* [CSS in HTML supports ](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)\(even less keystrokes\)
+
+
+
+
+
+
+
+
 
