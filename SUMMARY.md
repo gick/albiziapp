@@ -22,5 +22,9 @@
 ## Administrators guide
 
 * [Albiziapp Server Processes and DB](administrators-guide/d.md)
+
+## Researcher guide
+
+* [Untitled](researcher-guide/untitled.md)
 * [Main pages lifecycle](main-pages-lifecycle.md)
 
