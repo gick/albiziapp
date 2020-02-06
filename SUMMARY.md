@@ -2,6 +2,7 @@
 
 * [Welcome to Albiziapp](README.md)
 * [User guide](user-guide/README.md)
+  * [Untitled](user-guide/untitled-1.md)
   * [TODO](user-guide/untitled.md)
   * [Botany](user-guide/botany.md)
 
@@ -20,4 +21,5 @@
 ## Administrators guide
 
 * [Albiziapp Server Processes and DB](administrators-guide/d.md)
+* [Main pages lifecycle](main-pages-lifecycle.md)
 
